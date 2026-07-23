@@ -1,32 +1,52 @@
-# React + TypeScript + Vite
+# 💻 InsightOS — Frontend Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This folder contains the **React + TypeScript + Vite** web interface for **InsightOS** (Automated EDA and Pattern Discovery Platform).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 How to Open and Run the Application
 
-## React Compiler
+### 1. Make Sure the Backend Server is Running
+The frontend connects to the backend FastAPI server on `http://localhost:8000`. Before or alongside running the frontend:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+cd ../backend
+pip install -r requirements.txt
+python main.py
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 2. Install Frontend Dependencies
+From the `frontend` folder, run:
+
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+```bash
+npm run dev
+```
+
+### 4. Open in Browser
+Click or navigate to the URL shown in your terminal output:
+👉 **[http://localhost:5173](http://localhost:5173)**
+
+---
+
+## 🛠️ Available Scripts
+
+- **`npm run dev`**: Launches local Vite development server with HMR.
+- **`npm run build`**: Type-checks TypeScript code and compiles static production bundle to `dist/`.
+- **`npm run preview`**: Previews the built production site locally.
+- **`npm run lint`**: Runs Oxlint code linter.
+
+---
+
+## 📦 Tech Stack
+
+- **Framework:** React 19 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS + Lucide Icons + Framer Motion
+- **UI Components:** Radix UI Primitives
+- **Charts & Graphs:** Recharts
+- **State Management:** Zustand

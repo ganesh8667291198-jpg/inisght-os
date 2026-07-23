@@ -18,7 +18,7 @@ export default function UploadCenter() {
   const [showPreview, setShowPreview] = useState(false)
 
   useEffect(() => {
-    listDatasets().then(r => setRecentDatasets(r.data)).catch(() => {})
+    listDatasets().then(r => setRecentDatasets(Array.isArray(r.data) ? r.data : [])).catch(() => {})
   }, [])
 
   const onDrop = useCallback(async (accepted: File[]) => {
@@ -196,7 +196,7 @@ export default function UploadCenter() {
       )}
 
       {/* Recent Datasets */}
-      {recentDatasets.length > 0 && (
+      {Array.isArray(recentDatasets) && recentDatasets.length > 0 && (
         <Card>
           <h3 className="section-title mb-4 flex items-center gap-2">
             <Clock className="w-4 h-4 text-brand-400" /> Recent Datasets

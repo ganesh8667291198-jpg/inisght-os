@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightOS Report — test.csv</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',sans-serif; background:#0f0f1a; color:#e2e8f0; line-height:1.6; }
+  .container { max-width:900px; margin:0 auto; padding:40px 20px; }
+  .header { text-align:center; padding:40px 0; border-bottom:2px solid #6366f1; margin-bottom:40px; }
+  .header h1 { font-size:2.5rem; background:linear-gradient(135deg,#6366f1,#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .header p { color:#94a3b8; margin-top:8px; font-size:1.1rem; }
+  .section { background:#1e1e2e; border-radius:12px; padding:28px; margin-bottom:24px; border:1px solid #2d2d3d; }
+  .section h2 { color:#6366f1; font-size:1.4rem; margin-bottom:16px; }
+  .health-score { text-align:center; padding:20px; }
+  .score-circle { font-size:4rem; font-weight:bold; color:#6366f1; }
+  .grade { font-size:2rem; color:#8b5cf6; }
+  .dim-bar { display:flex; align-items:center; gap:12px; margin:8px 0; }
+  .dim-label { width:120px; font-size:0.9rem; color:#94a3b8; text-transform:capitalize; }
+  .bar-container { flex:1; height:8px; background:#2d2d3d; border-radius:4px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:4px; transition:width 0.3s; }
+  .dim-score { width:50px; text-align:right; font-size:0.9rem; }
+  .investigation-card { background:#16213e; border:1px solid #6366f1; border-radius:10px; padding:20px; margin:12px 0; }
+  .inv-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .inv-number { color:#6366f1; font-weight:bold; font-size:1.1rem; }
+  .confidence-badge { padding:4px 12px; border-radius:20px; color:white; font-size:0.85rem; font-weight:600; }
+  .investigation-card h3 { color:#e2e8f0; font-size:1.1rem; margin:8px 0; }
+  .explanation { color:#94a3b8; margin:8px 0; }
+  .evidence-box { background:#0f0f1a; border-radius:6px; padding:12px; margin-top:10px; font-size:0.9rem; color:#a5b4fc; }
+  ul { padding-left:20px; }
+  li { margin:6px 0; color:#94a3b8; }
+  li.risk { color:#fca5a5; }
+  li.rec { color:#86efac; }
+  .footer { text-align:center; padding:20px; color:#4b5563; font-size:0.85rem; border-top:1px solid #2d2d3d; margin-top:40px; }
+  .exec-summary { white-space:pre-wrap; color:#94a3b8; font-size:0.95rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>InsightOS</h1>
+    <p>Automated Data Intelligence Report</p>
+    <p style="margin-top:4px;color:#6366f1;font-weight:600;">test.csv</p>
+  </div>
+
+  <div class="section">
+    <h2>📋 Executive Summary</h2>
+    <div class="exec-summary">The dataset test.csv contains 3 records across 2 columns, comprising 1 numeric, 1 categorical features. Overall data quality is excellent with a health score of 90.0/100. Missing values account for 0.0% of all cells, with no significant duplication detected. The dataset appears suitable for exploratory analysis with minimal cleaning required.</div>
+  </div>
+
+  <div class="section">
+    <h2>🏥 Data Health Score</h2>
+    <div class="health-score">
+      <div class="score-circle">100.0</div>
+      <div class="grade">Grade: A — Excellent</div>
+    </div>
+    
+        <div class="dim-bar">
+          <div class="dim-label">Completeness</div>
+          <div class="bar-container">
+            <div class="bar-fill" style="width:100.0%;background:#22c55e"></div>
+          </div>
+          <div class="dim-score">100.0%</div>
+        </div>
+        <div class="dim-bar">
+          <div class="dim-label">Uniqueness</div>
+          <div class="bar-container">
+            <div class="bar-fill" style="width:100.0%;background:#22c55e"></div>
+          </div>
+          <div class="dim-score">100.0%</div>
+        </div>
+        <div class="dim-bar">
+          <div class="dim-label">Consistency</div>
+          <div class="bar-container">
+            <div class="bar-fill" style="width:100%;background:#22c55e"></div>
+          </div>
+          <div class="dim-score">100.0%</div>
+        </div>
+        <div class="dim-bar">
+          <div class="dim-label">Validity</div>
+          <div class="bar-container">
+            <div class="bar-fill" style="width:100%;background:#22c55e"></div>
+          </div>
+          <div class="dim-score">100.0%</div>
+        </div>
+        <div class="dim-bar">
+          <div class="dim-label">Accuracy</div>
+          <div class="bar-container">
+            <div class="bar-fill" style="width:100.0%;background:#22c55e"></div>
+          </div>
+          <div class="dim-score">100.0%</div>
+        </div>
+    <p style="margin-top:16px;color:#94a3b8;font-style:italic;">This dataset has an overall health score of 100.0/100 (A — Excellent). Completeness: 100.0% | Uniqueness: 100.0% | Consistency: 100.0% | Validity: 100.0% | Accuracy: 100.0%.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔍 Key Findings</h2>
+    <ul><li>The dataset appears well-distributed with no immediately alarming patterns.</li></ul>
+  </div>
+
+  <div class="section">
+    <h2>🔬 Investigations</h2>
+    <p style="color:#94a3b8">No significant patterns found.</p>
+  </div>
+
+  <div class="section">
+    <h2>⚠️ Potential Risks</h2>
+    <ul><li class='risk'>No significant data quality risks identified.</li></ul>
+  </div>
+
+  <div class="section">
+    <h2>💡 Recommendations</h2>
+    <ul><li class='rec'>Perform group-by analysis using `b` to discover segment-level patterns.</li><li class='rec'>Review the correlation matrix to identify redundant features before reporting.</li></ul>
+  </div>
+
+  <div class="footer">
+    Generated by InsightOS — Intelligent Platform for Automated EDA and Pattern Discovery
+  </div>
+</div>
+</body>
+</html>

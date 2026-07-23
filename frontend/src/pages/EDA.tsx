@@ -7,7 +7,7 @@ import { useStore } from '../store/useStore'
 import { PageHeader, LoadingSpinner, Card } from '../components/ui/Components'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  ScatterChart, Scatter, LineChart, Line, PieChart, Pie, Cell, Legend,
+  ScatterChart, Scatter, PieChart, Pie, Cell,
   AreaChart, Area
 } from 'recharts'
 import toast from 'react-hot-toast'
@@ -106,7 +106,7 @@ export default function EDA() {
         <ChartCard key={i} title={`${chart.column} — Composition`}>
           <ResponsiveContainer width="100%" height={220}>
             <PieChart>
-              <Pie data={chart.data || []} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label={({ name, pct }) => `${name} (${pct}%)`} labelLine={false}>
+              <Pie data={chart.data || []} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label={({ name, percent }: any) => `${name} (${((percent || 0) * 100).toFixed(0)}%)`} labelLine={false}>
                 {(chart.data || []).map((_: any, j: number) => <Cell key={j} fill={COLORS[j % COLORS.length]} />)}
               </Pie>
               <Tooltip content={<CustomTooltip />} />

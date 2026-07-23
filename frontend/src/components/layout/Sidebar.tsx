@@ -1,6 +1,6 @@
 // InsightOS — Sidebar Navigation
 import { motion, AnimatePresence } from 'framer-motion'
-import { useStore } from '../store/useStore'
+import { useStore } from '../../store/useStore'
 import {
   Upload, Activity, BarChart3, Wrench, TrendingUp, FlaskConical,
   Search, AlertTriangle, Layers, Clock, BookOpen, Lightbulb,

@@ -28,7 +28,13 @@ def load_dataframe(file_path: str) -> pd.DataFrame:
     if ext == ".csv":
         return pd.read_csv(file_path, low_memory=False)
     elif ext in (".xlsx", ".xls"):
-        return pd.read_excel(file_path)
+        try:
+            return pd.read_excel(file_path)
+        except ValueError as e:
+            if "Excel file format cannot be determined" in str(e):
+                # Sometimes a CSV file is saved with an .xlsx extension
+                return pd.read_csv(file_path, low_memory=False)
+            raise e
     elif ext == ".json":
         return pd.read_json(file_path)
     else:
